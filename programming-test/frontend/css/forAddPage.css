@@ -1,0 +1,135 @@
+/*
+  下記ページから登録フォーム用のデザインを拝借
+  https://form.run/media/contents/form-creation-tools/contact-form_design/
+*/
+
+/*
+  フォーム全体の設定
+*/
+.Form {
+  margin-top: 0px;
+  margin-left: 0;
+  max-width: 720px;
+  width: fit-content;
+}
+
+/*
+  フォーム下にある項目の設定
+*/
+.Form-Item {
+  border-top: 1px solid #ddd;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  width: 100%;
+  display: block;
+  align-items: center;
+}
+.Form-Item:nth-child(5) {
+  border-bottom: 1px solid #ddd;
+}
+.Form-Item-Label {
+  width: 100%;
+  max-width: 248px;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  font-size: 18px;
+}
+.Form-Item-Label.isMsg {
+  margin-top: 8px;
+  margin-bottom: auto;
+}
+.Form-Item-Label-Required {
+  border-radius: 6px;
+  margin-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 48px;
+  display: inline-block;
+  text-align: center;
+  background: #5bc8ac;
+  color: #fff;
+  font-size: 14px;
+}
+/*
+  フォーム入力欄の設定
+*/
+.Form-Item-Input {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 48px;
+  flex: 1;
+  width: 80%;
+  max-width: 410px;
+  background: #eaedf2;
+  font-size: 18px;
+}
+.Form-Item-Textarea {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 216px;
+  flex: 1;
+  width: 100%;
+  max-width: 410px;
+  background: #eaedf2;
+  font-size: 18px;
+}
+/*
+  登録ボタンの設定
+*/
+.Form-Btn {
+  border-radius: 6px;
+  margin-top: 32px;
+  margin-left: 100Fpx;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 140px;
+  display: block;
+  letter-spacing: 0.05em;
+  background: #5bc8ac;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+  left: 100px;
+}
+/*
+.Form-Btn {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 50px;
+  padding: 0 50px;
+  background: #06a309;
+  border-radius: 3px;
+  text-align: center;
+  color: #fff;
+  line-height: 50px;
+  overflow: hidden;
+  transition: all 0.3s ease-in;
+}
+*/
+.Form-Btn:hover {
+  background: #2abc27;
+}
+.Form-Btn:active span::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left:-50px;
+  content: "";
+  background: #3bcc3b;
+  border-radius: 100%;
+  opacity: 0;
+  animation: ripple 0.3s 1 ease-out;
+}

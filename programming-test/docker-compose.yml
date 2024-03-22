@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  # フロントエンドサーバー (Apache)
+  frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: docker/frontend.Dockerfile
+    ports:
+      - "8080:80"
+
+  # バックエンドサーバー (Golang)
+  backend:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+    # バックエンドも継続起動させておきたいのでttyを設定しておく
+    # https://inamuu.com/docker-compose%E3%81%A7%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%8C%E8%B5%B7%E5%8B%95%E3%81%97%E3%81%AA%E3%81%84/
+    tty: true
+
+  # データベース (MySQL)
+  db:
+    container_name: db
+    build:
+      context: .
+      dockerfile: docker/db.Dockerfile
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'rootpassword'
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data:

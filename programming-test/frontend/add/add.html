@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>アカウントの新規登録</title>
+    <link rel="stylesheet" href="../css/forAddPage.css">
+</head>
+<body>
+    <h1 id="hello_text">アカウントの新規登録</h1>
+
+    <!--インデックスに戻る-->
+    <a href="../index.html">TOPに戻る</a>
+    
+    <!--登録用フォーム-->
+    <form id="registrationForm" class="Form" method="post">
+        <!--名前入力欄-->
+        <div class="Form-Item">
+            <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>氏名</p>
+            <input type="text" class="Form-Item-Input" placeholder="例）山田太郎" name="registerName" maxlength="10" required autofocus>
+        </div>
+
+        <!--年齢入力欄-->
+        <div class="Form-Item">
+            <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>年齢</p>
+            <input type="number" class="Form-Item-Input" placeholder="例）20" name="registerAge" min="0" max="150" required>
+        </div>
+
+        <!--登録ボタン-->
+        <input type="submit" class="Form-Btn" value="送信する">
+    </form>
+
+    <script src="../js/register_userInfo.js"></script>
+</body>
+</html>
+
+
+
+
